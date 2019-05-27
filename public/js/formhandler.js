@@ -25,8 +25,6 @@
         this.$form.serializeArray().forEach( (prop) => {
           data[prop.name] = prop.value
         })
-        console.log(data) 
-        console.log( this )
         cb(data)
         this.$form[0].reset()
         this.$form[0].elements[0].focus()

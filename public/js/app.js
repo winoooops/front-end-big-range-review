@@ -4,12 +4,21 @@
   const DataStore = App.DataStore
   const Trunk = App.Trunk
   const FormHandler = App.FormHandler
+  const CheckList = App.CheckList
 
-  const FORM_SEL = '[data-coffee-order="form"]';
+  const LIST_SEL = '[data-coffee-order="checklist"]'
+  const FORM_SEL = '[data-coffee-order="form"]'
 
   const myTrunk = new Trunk('jazzCoffee', new DataStore() )
   const formHandler = new FormHandler(FORM_SEL)
-  formHandler.addSubmitHandler( myTrunk.createOrder.bind(myTrunk) )
+  const checkList = new CheckList(LIST_SEL) 
+
+  checkList.addClickHandler( myTrunk.removeOrder.bind(myTrunk) ) 
+
+  formHandler.addSubmitHandler( (data) => { 
+    myTrunk.createOrder.call(myTrunk,data) 
+    checkList.addRow.call(checkList, data)
+  })
   window.myTrunk = myTrunk
   
 })(window)
