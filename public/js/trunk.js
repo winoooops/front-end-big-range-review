@@ -5,10 +5,11 @@
     constructor(id,db) {
       this.trunkId = id
       this.db = db
+      console.log( this.db )
     }
 
     createOrder( order ){
-      this.db.add(order.key, order)
+      this.db.add(order.email, order)
     }
 
     removeOrder( email ) {
