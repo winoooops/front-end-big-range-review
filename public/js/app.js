@@ -5,6 +5,7 @@
   const Trunk = App.Trunk
   const FormHandler = App.FormHandler
   const CheckList = App.CheckList
+  const emailChecker = App.Validation.isUTSMail;
 
   const LIST_SEL = '[data-coffee-order="checklist"]'
   const FORM_SEL = '[data-coffee-order="form"]'

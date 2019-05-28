@@ -1,0 +1,14 @@
+( window => {
+  const App = window.App || {}
+  class Validation {
+    constructor () {}
+
+    isUTSMail( email ) {
+      return /.+student\.uts\.edu\.au$/.test(email) 
+        || /.+\.uts\.edu\.au$/.test(email)
+    }
+  }
+
+  App.Validation = Validation
+  window.App = App
+})(window)

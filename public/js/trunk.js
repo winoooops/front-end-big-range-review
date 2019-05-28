@@ -8,7 +8,6 @@
     }
 
     createOrder( order ){
-      console.log( order )
       this.db.add(order.email, order)
     }
 
@@ -20,7 +19,6 @@
       const customerIdArray = Object.keys(this.db.getAll() )
       customerIdArray.forEach( (email) => {
         // cause I am using arrow func here, so I dont' need to bind this...
-        console.log( this.db.get(email ))
       })
     }
   }

@@ -12,12 +12,12 @@
   <form action="" method="post" data-coffee-order="form">
     <div class='form-group'>
       <label for="order">Coffee Order</label>
-      <input type="text" name="order" class="form-control" autofocus>
+      <input type="text" name="order" class="form-control" required pattern= "[a-zA-Z\s]+" autofocus>
     </div>
 
     <div class="radio">
       <label for="email">Email</label>
-      <input type="text" name="email" class="form-control">
+      <input type="text" name="email" class="form-control" required>
     </div>
 
     <div class="radio">
@@ -73,6 +73,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="public/js/datastore.js"></script>
+  <script src="public/js/validation.js"></script>
   <script src="public/js/trunk.js"></script>
   <script src="public/js/formhandler.js"></script>
   <script src="public/js/checklist.js"></script>

@@ -11,7 +11,6 @@
       // remove any existing row with the same email
       this.removeRow( order.email ) 
       // creating row element basing on the order info
-      console.log( order )
       const rowElement = new Row( order )
       // append the row element inside
       this.$list.append( rowElement.$element )
