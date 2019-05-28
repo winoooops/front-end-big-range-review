@@ -17,7 +17,7 @@
   const formHandler = new FormHandler(FORM_SEL)
   const checkList = new CheckList(LIST_SEL) 
 
-  myTrunk.printOrder()
+  myTrunk.printOrder( checkList.addRow.bind(checkList) )
 
   checkList.addClickHandler( myTrunk.removeOrder.bind(myTrunk) ) 
 

@@ -19,11 +19,10 @@
       })
     }
 
-    get( key, cb ) {
+    get( key ) {
        // cb will render the item to the page
        return $.get(this.serverUrl + '/' + key, (res) => {
          console.log(`getting th info for ${key}`)
-         cb(res)
        })
     }
 

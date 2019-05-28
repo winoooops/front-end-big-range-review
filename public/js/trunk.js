@@ -16,10 +16,15 @@
       return this.db.remove(email)
     }
 
-    printOrder( ) {
+    printOrder( cb ) {
+      // cb is too print out the order 
       // geting the res from the API server
-      return this.db.getAll( (res) => {
-        console.log(res)
+      return this.db.getAll( (r) => {
+        let customerIdArray = Object.keys( r )
+        customerIdArray.forEach( (email) => {
+          this.db.get(email)
+            .then( (res) => cb(res) )
+        })
       })
       // travase throught the result <- this.db.get()
       // print them as checkbox
