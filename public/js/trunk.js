@@ -8,18 +8,22 @@
     }
 
     createOrder( order ){
-      this.db.add(order.email, order)
+      console.log( order )
+      return this.db.add(order.email, order)
     }
 
     removeOrder( email ) {
-      this.db.remove(email)
+      return this.db.remove(email)
     }
 
-    printOrder() {
-      const customerIdArray = Object.keys(this.db.getAll() )
-      customerIdArray.forEach( (email) => {
-        // cause I am using arrow func here, so I dont' need to bind this...
+    printOrder( ) {
+      // geting the res from the API server
+      return this.db.getAll( (res) => {
+        console.log(res)
       })
+      // travase throught the result <- this.db.get()
+      // print them as checkbox
+      
     }
   }
 

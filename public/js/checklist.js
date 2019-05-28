@@ -47,13 +47,13 @@
 
       let $checkbox = $('<input></input>', {
         'type': 'checkbox',
-        'value': order.email
+        'value': order.emailAddress
       })
 
       let description = order.size + ' '
       order.flavor ? description += order.flavor : ''
-      description += order.order + ','
-      description += ` (${order.email})`
+      description += order.coffee + ','
+      description += ` (${order.emailAddress})`
       description += ` [${order.strength}x]`
       
 
