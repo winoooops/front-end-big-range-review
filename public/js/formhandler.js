@@ -30,6 +30,23 @@
         this.$form[0].elements[0].focus()
       })
     }
+
+    addInputHandler( cb ) {
+      this.$form.on('input', '[name="email"]',(e) => {
+        let emailAddress = e.target.value
+        let msg = ''
+        if ( cb( emailAddress ) ) {
+          return e.target.setCustomValidity('')
+        } else {
+          console.log('poop')
+          msg = emailAddress + " is not a valid address..."
+          console.log( msg )
+          e.target.setCustomValidity( msg )
+        }
+        
+      })
+    }
+
   }
 
   App.FormHandler = FormHandler

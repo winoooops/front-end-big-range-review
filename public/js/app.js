@@ -5,7 +5,8 @@
   const Trunk = App.Trunk
   const FormHandler = App.FormHandler
   const CheckList = App.CheckList
-  const emailChecker = App.Validation.isUTSMail;
+  const emailChecker = App.Validation.isUTSMail
+  console.log( emailChecker )
 
   const LIST_SEL = '[data-coffee-order="checklist"]'
   const FORM_SEL = '[data-coffee-order="form"]'
@@ -15,6 +16,8 @@
   const checkList = new CheckList(LIST_SEL) 
 
   checkList.addClickHandler( myTrunk.removeOrder.bind(myTrunk) ) 
+
+  formHandler.addInputHandler( emailChecker )
 
   formHandler.addSubmitHandler( (data) => { 
     myTrunk.createOrder.call(myTrunk,data) 

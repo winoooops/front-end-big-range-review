@@ -3,9 +3,11 @@
   class Validation {
     constructor () {}
 
-    isUTSMail( email ) {
-      return /.+student\.uts\.edu\.au$/.test(email) 
-        || /.+\.uts\.edu\.au$/.test(email)
+    static isUTSMail( email ) {
+      console.log(/.+@student\.uts\.edu\.au$/.test(email) 
+      || /.+@uts\.edu\.au$/.test(email) )
+      return /.+@student\.uts\.edu\.au$/.test(email) 
+      || /.+@uts\.edu\.au$/.test(email)
     }
   }
 
