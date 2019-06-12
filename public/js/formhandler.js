@@ -32,7 +32,7 @@
     }
 
     addInputHandler( cb ) {
-      this.$form.on('input', '[name="email"]',(e) => {
+      this.$form.on('input', '[name="emailAddress"]',(e) => {
         let emailAddress = e.target.value
         let msg = ''
         if ( cb( emailAddress ) ) {

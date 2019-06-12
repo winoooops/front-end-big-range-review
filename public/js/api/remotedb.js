@@ -33,7 +33,7 @@
     }
 
     remove( key ) {
-      return $.ajax({
+      return $.ajax(this.serverUrl + '/'+ key, {
         type: "DELETE"
       })
     }
